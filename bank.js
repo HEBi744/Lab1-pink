@@ -29,8 +29,8 @@ let mr= mp+debt*(50/100);
 function Ccl(limit, percent, change) {
      //вычислить ежемесячный процент
     
-     let debt = limit;
-    let time = 1;
+    let debt = limit;
+    time = 1;
     let ch = change;
     while( debt > 0) {
         
@@ -43,22 +43,27 @@ function Ccl(limit, percent, change) {
         }
         
         console.log('пополнение' ,mr.toFixed())
-         debt = debt - mr;
-         if(debt < 0){
+        debt = debt - mr;
+        if(debt < 0){
              console.log('лимит закрыт: ', debt.toFixed())
-         }else{
-             console.log('лимит не закрыт: ', debt.toFixed())
-            } 
-            if(ch > 0){ 
-                debt -=ch
-            } else if(ch < 0){
-                debt +=ch
-            }else if (ch==0){
-                console.log('так не работает')
-            }
+        }
+        else{
+            console.log('лимит не закрыт: ', debt.toFixed())
+        } 
+
+        if(ch > 0){ 
+            debt -=ch
+        }
+        else if(ch < 0){
+            debt +=ch
+        }
+        else if (ch==0){
+            console.log('так не работает')
+        }
+        
         time++;
     }
  //alert (Ввести + '  ')
- }
+}
 Ccl(40000, 24, 0);
 
