@@ -38,7 +38,7 @@ function Ccl(limit, percent, change) {
         
         console.log('начисленные проценты' , mp.toFixed() )
         let mr = mp*2;
-        if(mr < 500) {
+        if(mr < 500){
             mr=500
         }
         
@@ -60,7 +60,7 @@ function Ccl(limit, percent, change) {
         else if (ch==0){
             console.log('так не работает')
         }
-        
+
         time++;
     }
  //alert (Ввести + '  ')
