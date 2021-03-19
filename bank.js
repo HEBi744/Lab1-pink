@@ -32,8 +32,9 @@ function Ccl(limit, percent, change) {
     let debt = limit;
     time = 1;
     let ch = change;
-    while( debt > 0) {
-        
+    
+    while( debt > 0 && time <=12 ) {
+       
         let mp= debt*(percent/(100*12));
         
         console.log('начисленные проценты' , mp.toFixed() )
@@ -41,9 +42,18 @@ function Ccl(limit, percent, change) {
         if(mr < 500){
             mr=500
         }
-        
+        debt -=ch 
         console.log('пополнение' ,mr.toFixed())
         debt = debt - mr;
+        console.log ('ch', ch, debt)
+        // if(ch > 0){ 
+        
+        // }
+        // else if (ch==0){
+        //     console.log('так не работает')
+        // }
+        
+        console.log ('debt now', debt)
         if(debt < 0){
              console.log('лимит закрыт: ', debt.toFixed())
         }
@@ -51,19 +61,11 @@ function Ccl(limit, percent, change) {
             console.log('лимит не закрыт: ', debt.toFixed())
         } 
 
-        if(ch > 0){ 
-            debt -=ch
-        }
-        else if(ch < 0){
-            debt +=ch
-        }
-        else if (ch==0){
-            console.log('так не работает')
-        }
+        
 
         time++;
     }
  //alert (Ввести + '  ')
 }
-Ccl(40000, 24, 0);
+Ccl(40000, 24, -2000);
 
